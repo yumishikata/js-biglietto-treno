@@ -14,12 +14,10 @@ anniUtente = prompt("Inserisca la sua età per calcolare un eventuale sconto: ")
 costoBiglietto = kmUtente * costoKm;
 scontoApplicato = "0%";
 
-if (isNaN(anniUtente)) {
-    alert("La preghiamo d'inserire un valore numerico.");
-    
+while (isNaN(anniUtente) || (anniUtente > 120)) {
+    alert("La preghiamo d'inserire un valore numerico valido");
+    anniUtente = prompt("Inserisca la sua età per calcolare un eventuale sconto: ");
 }
-
-else {
 
 if (anniUtente < 18) {
     scontoApplicato = scontoUnder + "%";
@@ -30,10 +28,9 @@ else if (anniUtente > 65) {
     costoBiglietto -= (costoBiglietto * scontoOver / 100);
 }
 
-
 costoBiglietto = Math.round(costoBiglietto * 100) / 100;
 
 document.getElementById('my_id').innerHTML = 
 "Le è stato applicato uno sconto del " + scontoApplicato + ", quindi il costo del suo biglietto è: " + costoBiglietto + "€";
 
-}
+
