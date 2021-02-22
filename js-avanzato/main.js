@@ -7,12 +7,8 @@ var anniUtente;
 var costoBiglietto; 
 var scontoApplicato;
 
-kmUtente = prompt("Quanti km vuole percorrere? ");
-
-
-
-
 scontoApplicato = "0%";
+kmUtente = prompt("Quanti km vuole percorrere? ");
 
 while (isNaN(kmUtente)) {
     alert("La preghiamo d'inserire un valore numerico valido");
@@ -22,7 +18,7 @@ costoBiglietto = kmUtente * costoKm;
 
 anniUtente = prompt("Inserisca la sua età per calcolare un eventuale sconto: ");
 
-while (isNaN(anniUtente) || (anniUtente > 120)) {
+while (isNaN(anniUtente) || (anniUtente > 120 || anniUtente <= 0)) {
     alert("La preghiamo d'inserire un valore numerico valido");
     anniUtente = prompt("Inserisca la sua età per calcolare un eventuale sconto: ");
 }
